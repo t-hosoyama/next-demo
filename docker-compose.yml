@@ -1,0 +1,48 @@
+#
+# ローカル開発環境（超シンプル構成）
+#
+version: '2'
+services:
+
+  node:
+    build: ./docker/node
+    container_name: next_node_container
+    hostname: node
+    volumes:
+      - ".:/var/www/html"
+    working_dir: /var/www/html
+    command: [sh, -c, npm install && npm run build && npm run dev]
+    links:
+      - mysql:mysql
+    ports:
+      - "3000:3000"
+      - "3001:3001"
+
+  nginx:
+    build: ./docker/nginx
+    container_name: next_nginx_container
+    ports:
+      - "80:80"
+    depends_on:
+      - "node"
+    volumes:
+      - "./docker/nginx/conf.d:/etc/nginx/conf.d"
+      - "./docker/nginx/logs:/var/log/nginx"
+    links:
+      - mysql:mysql
+      - node
+
+  mysql:
+    build: ./docker/mysql
+    container_name: next_mysql_container
+    hostname: container_mysql
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: next
+      MYSQL_USER: next
+      MYSQL_PASSWORD: next
+    volumes:
+      - ./docker/mysql/initdb.d:/docker-entrypoint-initdb.d
