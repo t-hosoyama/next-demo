@@ -15,6 +15,7 @@
     "sourceMap": true,
     "skipLibCheck": true,
     "baseUrl": ".",
+    "types": ["node"],
     "typeRoots": [
       "./node_modules/@types"
     ],
@@ -22,6 +23,8 @@
       "dom",
       "es2015",
       "es2016"
-    ]
+    ],
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
   }
 }

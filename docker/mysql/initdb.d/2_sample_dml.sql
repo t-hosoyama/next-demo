@@ -5,7 +5,7 @@ USE `next` ;
 
 # テーブルのダンプ sample
 # ------------------------------------------------------------
-INSERT INTO `list` (`id`, `name`, `image_url`)
+INSERT INTO `list` (`id`, `name`, `url`)
 VALUES
     (1,'sample1','/sample1'),
     (2,'sample2','/sample2'),

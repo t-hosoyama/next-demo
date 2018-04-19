@@ -1,12 +1,34 @@
 import Document, { Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
+import 'reflect-metadata';
+import { ListEntity } from '../src/entities/ListEntity';
+import { Sequelize } from 'sequelize-typescript';
 
 export default class MyDocument extends Document {
-    static getInitialProps ({ renderPage }) {
+    static async getInitialProps ({ renderPage }) {
         const sheet = new ServerStyleSheet()
         const page = renderPage(App => props => sheet.collectStyles(<App {...props} />))
         const styleTags = sheet.getStyleElement()
-        return { ...page, styleTags }
+
+        let name = 'init'
+
+        const sequelize =  new Sequelize({
+            dialect: 'mysql',
+            host: '127.0.0.1',
+            database: 'next',
+            username: 'next',
+            password: 'next',
+        });
+        sequelize.addModels([ListEntity]);
+
+        await sequelize.authenticate().catch(console.error)
+        console.log('接続した')
+
+        // TypeError: Class constructor Model cannot be invoked without 'new'
+        const list = await ListEntity.findByPrimary(1).catch(console.log)
+        console.log(list)
+
+        return { ...page, styleTags, name }
     }
 
     render () {
@@ -21,6 +43,7 @@ export default class MyDocument extends Document {
                     {this.props.styleTags}
                 </Head>
                 <body>
+                    {this.props.name}
                     <Main />
                     <NextScript />
                 </body>
