@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "scripts": {
     "start": "NODE_ENV=production node server.js",
-    "dev": "node server.js",
+    "dev": "node server.js -p 3000",
     "build": "next build"
   },
   "dependencies": {
+    "argv": "0.0.2",
     "express": "^4.16.3",
     "next": "^5.1.0",
     "react": "^16.3.0",
