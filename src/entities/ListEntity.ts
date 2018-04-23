@@ -3,6 +3,10 @@ import {Table, Column, Model, DataType, PrimaryKey, CreatedAt, UpdatedAt} from '
 @Table({ tableName: 'list' })
 export class ListEntity extends Model<ListEntity> {
 
+    constructor(values?: any, options?: any) {
+        super(values, options);
+    }
+
     @PrimaryKey
     @Column
     id: number;
