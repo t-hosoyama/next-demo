@@ -1,4 +1,4 @@
-import { bustCache } from "./url"
+import { bustCache } from "~/utils/url"
 
 export const color = {
   white: "#fff",
