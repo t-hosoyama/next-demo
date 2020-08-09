@@ -1,3 +1,5 @@
+const isDebug = true
+
 interface IReproIO {
   command: string
   value: string
@@ -15,7 +17,7 @@ class ReproIO implements IReproIO {
 
   apply() {
     window.reproio(this.command, this.value, this.options)
-    console.log("🌱reproio:", JSON.stringify(this, null, 2))
+    isDebug && console.log("🌱reproio:", JSON.stringify(this, null, 2))
     return this
   }
 
@@ -25,7 +27,7 @@ class ReproIO implements IReproIO {
       payload
     }
     window.dispatchEvent(new CustomEvent("habits.reproio", { detail }))
-    console.log("🍙reproio.raise:", JSON.stringify(detail, null, 2))
+    isDebug && console.log("🍙reproio.raise:", JSON.stringify(detail, null, 2))
     return this
   }
 }
