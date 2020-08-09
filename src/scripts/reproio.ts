@@ -27,7 +27,7 @@ class ReproIO implements IReproIO {
       payload
     }
     window.dispatchEvent(new CustomEvent("habits.reproio", { detail }))
-    isDebug && console.log("🍙reproio.raise:", JSON.stringify(detail, null, 2))
+    isDebug && console.log("🍙reproio.emit:", JSON.stringify(detail, null, 2))
     return this
   }
 }
