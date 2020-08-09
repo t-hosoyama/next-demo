@@ -1,7 +1,7 @@
 import { NextPage } from "next"
-import Link from 'next/link'
-import styled from 'styled-components'
-import Layout from '~/components/Layout'
+import Link from "next/link"
+import styled from "styled-components"
+import Layout from "~/components/Layout"
 import { color, url } from "~/utils/style"
 
 const IndexPage: NextPage = () => (
