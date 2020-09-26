@@ -4,8 +4,9 @@
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:prettier/recommended",
-    "prettier/@typescript-eslint"
+    "prettier",
+    "prettier/@typescript-eslint",
+    "prettier/react"
   ],
   "plugins": [
     "@typescript-eslint",
@@ -32,17 +33,6 @@
     "react/no-unescaped-entities": "off",
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/no-explicit-any": "off",
-    "@typescript-eslint/explicit-module-boundary-types": "off",
-    "prettier/prettier": [
-      "error", {
-        "bracketSpacing": true,
-        "printWidth": 120,
-        "semi": false,
-        "singleQuote": false,
-        "tabWidth": 2,
-        "trailingComma": "none",
-        "useTabs": false
-      }
-    ]
+    "@typescript-eslint/explicit-module-boundary-types": "off"
   }
 }
