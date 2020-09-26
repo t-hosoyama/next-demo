@@ -1,4 +1,5 @@
 import { setConfig } from "next/config"
+
 import nextConfig from "/next.config"
 import { url } from "~/utils/style"
 

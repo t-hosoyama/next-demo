@@ -19,6 +19,7 @@ const IndexPage: NextPage = () => {
     </$Container>
   )
 }
+
 export default IndexPage
 
 const $Container = styled.div`

@@ -1,5 +1,6 @@
 import Link from "next/link"
 import React from "react"
+
 import { User } from "~/interfaces"
 
 type Props = {

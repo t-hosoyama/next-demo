@@ -1,5 +1,7 @@
 import * as React from "react"
+
 import { User } from "~/interfaces"
+
 import ListItem from "./ListItem"
 
 type Props = {
