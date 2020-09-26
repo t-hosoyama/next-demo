@@ -8,10 +8,7 @@
     "prettier/@typescript-eslint",
     "prettier/react"
   ],
-  "plugins": [
-    "@typescript-eslint",
-    "react"
-  ],
+  "plugins": ["@typescript-eslint", "react", "simple-import-sort"],
   "env": {
     "browser": true,
     "node": true,
@@ -30,6 +27,9 @@
     }
   },
   "rules": {
+    "sort-imports": "off",
+    "import/order": "off",
+    "simple-import-sort/sort": "error",
     "react/no-unescaped-entities": "off",
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/no-explicit-any": "off",
