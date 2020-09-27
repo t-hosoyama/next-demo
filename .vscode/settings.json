@@ -6,5 +6,8 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "editor.fontFamily": "HackGen,Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontSize": 16,
+  "terminal.integrated.fontFamily": "\"HackGen Console\", monospace"
 }
