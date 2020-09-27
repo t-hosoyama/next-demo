@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from "next"
 
-import Layout from "~/components/Layout"
+import { Layout } from "~/components/Layout"
 import ListDetail from "~/components/ListDetail"
 import { User } from "~/interfaces"
 import { sampleUserData } from "~/utils/sample-data"
@@ -13,7 +13,7 @@ type Props = {
 const StaticPropsDetail: React.FC<Props> = ({ item, errors }) => {
   if (errors) {
     return (
-      <Layout title="Error | Next.js + TypeScript Example">
+      <Layout title="Error">
         <p>
           <span style={{ color: "red" }}>Error:</span> {errors}
         </p>
@@ -21,11 +21,7 @@ const StaticPropsDetail: React.FC<Props> = ({ item, errors }) => {
     )
   }
 
-  return (
-    <Layout title={`${item ? item.name : "User Detail"} | Next.js + TypeScript Example`}>
-      {item && <ListDetail item={item} />}
-    </Layout>
-  )
+  return <Layout title={`${item ? item.name : "User Detail"}`}>{item && <ListDetail item={item} />}</Layout>
 }
 
 export default StaticPropsDetail

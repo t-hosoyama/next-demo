@@ -1,7 +1,7 @@
 import { GetStaticProps } from "next"
 import Link from "next/link"
 
-import Layout from "~/components/Layout"
+import { Layout } from "~/components/Layout"
 import List from "~/components/List"
 import { User } from "~/interfaces"
 import { sampleUserData } from "~/utils/sample-data"
@@ -11,7 +11,7 @@ type Props = {
 }
 
 const WithStaticProps: React.FC<Props> = ({ items }) => (
-  <Layout title="Users List | Next.js + TypeScript Example">
+  <Layout title="Users List">
     <h1>Users List</h1>
     <p>
       Example fetching data from inside <code>getStaticProps()</code>.

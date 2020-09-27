@@ -1,8 +1,8 @@
 import { bustCache } from "~/utils/url"
 
 export const color = {
-  white: "#fff",
-  black: "#000",
+  white: "#ffffff",
+  black: "#000000",
   inkBlack: "#333"
 }
 

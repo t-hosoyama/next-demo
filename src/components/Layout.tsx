@@ -1,40 +1,36 @@
-import Head from "next/head"
-import Link from "next/link"
+import NextHead from "next/head"
 import React from "react"
 
+import { Breadcrumbs } from "./breadcrumbs"
+
 type Props = {
-  title?: string
+  title: string
 }
 
-const Layout: React.FC<Props> = ({ children, title = "This is the default title" }) => (
-  <div>
-    <Head>
-      <title>{title}</title>
+export const Head: React.FC<Props> = (props) => {
+  const { title } = props
+  return (
+    <NextHead>
       <meta charSet="utf-8" />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-    </Head>
-    <header>
-      <nav>
-        <Link href="/">
-          <a>Home</a>
-        </Link>{" "}
-        |{" "}
-        <Link href="/about">
-          <a>About</a>
-        </Link>{" "}
-        |{" "}
-        <Link href="/users">
-          <a>Users List</a>
-        </Link>{" "}
-        | <a href="/api/users">Users API</a>
-      </nav>
-    </header>
-    {children}
-    <footer>
-      <hr />
-      <span>I'm here to stay (Footer)</span>
-    </footer>
-  </div>
-)
+      <title>{title} | next-demo</title>
+    </NextHead>
+  )
+}
 
-export default Layout
+export const Layout: React.FC<Props> = (props) => {
+  const { children, title } = props
+  return (
+    <>
+      <Head title={title} />
+      <header>
+        <Breadcrumbs />
+      </header>
+      {children}
+      <footer>
+        <hr />
+        <span>I'm here to stay (Footer)</span>
+      </footer>
+    </>
+  )
+}
