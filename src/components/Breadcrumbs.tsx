@@ -11,6 +11,9 @@ export const Breadcrumbs: React.FC = () => {
       <Link href="/about" passHref>
         <$Link>About</$Link>
       </Link>
+      <Link href="/calc" passHref>
+        <$Link>Calc</$Link>
+      </Link>
       <Link href="/users" passHref>
         <$Link>Users</$Link>
       </Link>
