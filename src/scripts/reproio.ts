@@ -16,7 +16,7 @@ class ReproIO implements IReproIO {
   }
 
   apply() {
-    window.reproio(this.command, this.value, this.options)
+    window.reproio?.(this.command, this.value, this.options)
     isDebug && console.log("🌱reproio:", JSON.stringify(this, null, 2))
     return this
   }
